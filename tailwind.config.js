@@ -5,6 +5,8 @@ export default {
     extend: {
       colors: {
         evergreen: "#2b4341",
+        "evergreen-light": "#2aa78d",
+        whiteish: "#f4faff",
       },
     },
   },
