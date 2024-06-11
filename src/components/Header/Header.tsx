@@ -1,4 +1,5 @@
 import backgroundImage from "../../assets/img/background-img.jpg";
+import { Button } from "../Button/Button";
 import { Container } from "../Container/Container";
 import { HeaderTitle } from "./HeaderTitle";
 
@@ -15,9 +16,7 @@ export const Header = () => {
             Encontre livros <br /> que sejam a sua cara!
           </p>
           <p className="mt-3 mb-5 text-evergreen-light text-xl">Lorem Ipsum</p>
-          <button className="bg-evergreen-light px-3 py-2 rounded-lg shadow text-whiteish font-medium">
-            Pesquisar livros
-          </button>
+          <Button title="Pesquisar livros"/>
         </div>
       </Container>
     </header>
