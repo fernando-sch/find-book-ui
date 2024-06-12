@@ -3,6 +3,7 @@ import { Button } from "../../components/Button/Button";
 import { Container } from "../../components/Container/Container";
 import { Header } from "../../components/Header/Header";
 import { Title } from "../../components/Title/Title";
+import { Card } from "../../components/Card/Card";
 
 const genreBooks = [
   "Ação",
@@ -34,7 +35,7 @@ export const Home = () => {
       <Header />
       <Container>
         <Title title="O que você quer ler hoje?" />
-        <div className="my-10 gap-8 grid grid-cols-8">
+        <div className="my-10 gap-8 grid lg:grid-cols-6 grid-cols-4">
           {genreBooks.map((genre, index) => (
             <Button
               key={index}
@@ -54,7 +55,8 @@ export const Home = () => {
             className="outline-none shadow-lg border border-gray-100 rounded-lg w-full p-3"
           />
         </div>
-        <Title title="Livros recomendados" />
+        <Title title="Livros recomendados" className="my-5" />
+        <Card />
       </Container>
     </section>
   );
