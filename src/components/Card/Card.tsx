@@ -1,4 +1,5 @@
 import { Button } from "../Button/Button";
+import { Tag } from "../Tag/Tag";
 
 export const Card = () => {
   return (
@@ -11,9 +12,7 @@ export const Card = () => {
       <div className="col-span-2">
         <p className="font-bold text-2xl text-evergreen">Codigo Limpo</p>
         <p className="font-light text-lg text-gray-500">Autor</p>
-        <p className="rounded-full bg-green-100 bg-opacity-50 text-evergreen text-center w-fit px-6 py-1">
-          Computer Enginner
-        </p>
+        <Tag title="Computer Engineering" />
         <p>
           Sinopse: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
           at magna est. Ut viverra metus nibh. Integer sit amet purus gravida
