@@ -16,7 +16,7 @@ export const Button = ({
   return (
     <button
       className={classNames([
-        "px-3 py-2 rounded-lg shadow font-medium",
+        "px-3 py-2 rounded-lg shadow font-medium min-w-fit",
         variant === "dark" && "bg-evergreen-light text-white",
         variant === "light" &&
           "bg-white border-2 border-evergreen-light text-evergreen-light",
