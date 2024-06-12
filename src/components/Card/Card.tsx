@@ -11,19 +11,20 @@ export const Card = () => {
       />
       <div className="col-span-2">
         <p className="font-bold text-2xl text-evergreen">Codigo Limpo</p>
-        <p className="font-light text-lg text-gray-500">Autor</p>
-        <Tag title="Computer Engineering" />
+        <p className="font-light text-lg text-gray-500 mb-5">Autor</p>
+        <Tag title="Computer Engineering" className="mb-3" />
         <p>
-          Sinopse: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-          at magna est. Ut viverra metus nibh. Integer sit amet purus gravida
-          justo interdum mattis quis quis justo. Vivamus nec tristique metus,
-          vitae ultricies est. Aliquam dapibus id augue nec sodales.
+          <strong>Sinopse:</strong> Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit. Cras at magna est. Ut viverra metus nibh. Integer sit
+          amet purus gravida justo interdum mattis quis quis justo. Vivamus nec
+          tristique metus, vitae ultricies est. Aliquam dapibus id augue nec
+          sodales.
         </p>
         <Button
           title="Ver mais"
           variant="light"
           onClick={() => console.log("book card")}
-          className="mt-3"
+          className="mt-3 w-1/2"
         />
       </div>
     </div>
