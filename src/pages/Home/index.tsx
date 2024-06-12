@@ -4,6 +4,7 @@ import { Container } from "../../components/Container/Container";
 import { Header } from "../../components/Header/Header";
 import { Title } from "../../components/Title/Title";
 import { Card } from "../../components/Card/Card";
+import { Input } from "../../components/Input/Input";
 
 const genreBooks = [
   "Ação",
@@ -49,14 +50,10 @@ export const Home = () => {
           <p className="text-evergreen font-semibold text-2xl">
             Sobre o que você gostaria de receber uma recomendação de livro?
           </p>
-          <input
-            type="text"
-            placeholder="Eu gostaria de ler..."
-            className="outline-none shadow-lg border border-gray-100 rounded-lg w-full p-3"
-          />
+          <Input placeholder={"Eu gostaria de ler..."} />
         </div>
         <Title title="Livros recomendados" className="my-5" />
-        <Card bookId="1"/>
+        <Card bookId="1" />
       </Container>
     </section>
   );
