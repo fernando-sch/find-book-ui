@@ -56,7 +56,7 @@ export const Home = () => {
           />
         </div>
         <Title title="Livros recomendados" className="my-5" />
-        <Card />
+        <Card bookId="1"/>
       </Container>
     </section>
   );
