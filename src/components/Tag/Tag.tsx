@@ -1,10 +1,12 @@
+import classNames from "classnames";
 import { useCallback } from "react";
 
 type TagProps = {
   title: string;
+  className?: string;
 };
 
-export const Tag = ({ title }: TagProps) => {
+export const Tag = ({ title, className = "" }: TagProps) => {
   const randomColors = useCallback((): {
     lightness: string;
     darkness: string;
@@ -22,7 +24,10 @@ export const Tag = ({ title }: TagProps) => {
         backgroundColor: randomColors().lightness,
         color: randomColors().darkness,
       }}
-      className="rounded-full bg-opacity-5 text-center w-fit px-3 py-1"
+      className={classNames(
+        "rounded-full bg-opacity-5 text-center w-fit px-3 py-1",
+        className
+      )}
     >
       {title}
     </p>
