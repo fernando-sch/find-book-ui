@@ -34,7 +34,7 @@ export const Home = () => {
       <Header />
       <Container>
         <Title title="O que você quer ler hoje?" />
-        <div className="mt-10 gap-8 grid grid-cols-8">
+        <div className="my-10 gap-8 grid grid-cols-8">
           {genreBooks.map((genre, index) => (
             <Button
               key={index}
@@ -44,6 +44,17 @@ export const Home = () => {
             />
           ))}
         </div>
+        <div className="mt-1">
+          <p className="text-evergreen font-semibold text-2xl">
+            Sobre o que você gostaria de receber uma recomendação de livro?
+          </p>
+          <input
+            type="text"
+            placeholder="Eu gostaria de ler..."
+            className="outline-none shadow-lg border border-gray-100 rounded-lg w-full p-3"
+          />
+        </div>
+        <Title title="Livros recomendados" />
       </Container>
     </>
   );
