@@ -30,7 +30,7 @@ export const Home = () => {
   );
 
   return (
-    <>
+    <section className="mb-6">
       <Header />
       <Container>
         <Title title="O que você quer ler hoje?" />
@@ -56,6 +56,6 @@ export const Home = () => {
         </div>
         <Title title="Livros recomendados" />
       </Container>
-    </>
+    </section>
   );
 };
