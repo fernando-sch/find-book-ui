@@ -1,7 +1,19 @@
+import { useCallback } from "react";
 import { Button } from "../Button/Button";
 import { Tag } from "../Tag/Tag";
+import { useNavigate } from "react-router-dom";
 
-export const Card = () => {
+type CardProps = {
+  bookId: string;
+};
+
+export const Card = (bookId: CardProps) => {
+  const navigate = useNavigate();
+
+  const handleBookDetails = useCallback(() => {
+    navigate(`/${bookId}`);
+  }, [bookId, navigate]);
+
   return (
     <div className="p-4 grid grid-cols-3 gap-3 shadow-lg rounded-lg border border-gray-100 max-w-lg w-full">
       <img
@@ -23,7 +35,7 @@ export const Card = () => {
         <Button
           title="Ver mais"
           variant="light"
-          onClick={() => console.log("book card")}
+          onClick={() => handleBookDetails()}
           className="mt-3 w-1/2"
         />
       </div>
