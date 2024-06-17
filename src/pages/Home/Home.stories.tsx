@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { MemoryRouter } from "react-router-dom";
-import { Home } from ".";
+import { Home } from "./Home";
 
 const meta = { component: Home } satisfies Meta<typeof Home>;
 export default meta;

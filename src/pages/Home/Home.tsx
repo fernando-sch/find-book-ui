@@ -71,7 +71,7 @@ export const Home = () => {
           />
         </div>
         <Title title="Livros recomendados" className="my-5" />
-        <div className="grid md:grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-3 grid-cols-1 gap-5">
           {books.map((book) => (
             <Card
               key={book._id}
