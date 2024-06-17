@@ -1,6 +1,6 @@
 import React, { createContext, useState } from "react";
 
-type Book = {
+export type Book = {
   _id: string;
   title: string;
   authors: string[];
