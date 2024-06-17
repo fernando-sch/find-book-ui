@@ -1,10 +1,12 @@
-import { useCallback, useState } from "react";
+import React, { useCallback, useContext, useState } from "react";
 import { Button } from "../../components/Button/Button";
 import { Container } from "../../components/Container/Container";
 import { Header } from "../../components/Header/Header";
 import { Title } from "../../components/Title/Title";
 import { Card } from "../../components/Card/Card";
 import { Input } from "../../components/Input/Input";
+import { searchBook } from "../../services/Books";
+import { BooksContext } from "../../contexts/BooksContext";
 
 const genreBooks = [
   "Ação",
@@ -17,6 +19,7 @@ const genreBooks = [
 
 export const Home = () => {
   const [genresSelected, setGenresSelected] = useState<string[]>([]);
+  const { books, handleSetBooks } = useContext(BooksContext);
 
   const handleSelect = useCallback(
     (genre: string) => {
@@ -29,6 +32,14 @@ export const Home = () => {
       }
     },
     [genresSelected]
+  );
+
+  const handleSubmit = useCallback(
+    async (value: string) => {
+      const response = await searchBook(value);
+      handleSetBooks(response);
+    },
+    [handleSetBooks]
   );
 
   return (
@@ -50,10 +61,29 @@ export const Home = () => {
           <p className="text-evergreen font-semibold text-2xl">
             Sobre o que você gostaria de receber uma recomendação de livro?
           </p>
-          <Input placeholder={"Eu gostaria de ler..."} />
+          <Input
+            placeholder={"Eu gostaria de ler..."}
+            onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
+              if (e.key === "Enter") {
+                handleSubmit(e.target.value);
+              }
+            }}
+          />
         </div>
         <Title title="Livros recomendados" className="my-5" />
-        <Card bookId="1" />
+        <div className="grid md:grid-cols-3 gap-4">
+          {books.map((book) => (
+            <Card
+              key={book._id}
+              id={book._id}
+              title={book.title}
+              authors={book.authors}
+              categories={book.categories}
+              shortDescription={book.shortDescription}
+              thumbnailUrl={book.thumbnailUrl}
+            />
+          ))}
+        </div>
       </Container>
     </section>
   );
